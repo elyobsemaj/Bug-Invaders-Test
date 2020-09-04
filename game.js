@@ -24,7 +24,6 @@ function create() {
 	gameState.enemies = this.physics.add.group();
         for (yVal = 1; yVal < 4; yVal++) {
                 gameState.enemies.create(50 , 50 * yVal, 'bug1').setScale(0.6).setGravityY(-200);
-            }
         }
 }
 
