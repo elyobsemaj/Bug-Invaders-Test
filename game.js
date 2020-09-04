@@ -25,6 +25,8 @@ function create() {
         for (yVal = 1; yVal < 4; yVal++) {
                 gameState.enemies.create(50 , 50 * yVal, 'bug1').setScale(0.6).setGravityY(-200);
         }
+	var enemy1 = this.add.follower(path, 50, 450, 'bug1');
+    	enemy1.startFollow(4000);
 }
 
 function update() {
