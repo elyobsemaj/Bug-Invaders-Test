@@ -13,6 +13,7 @@ const gameState = {};
 
 function create() {
     	// add a path
+	    var graphics = this.add.graphics(); 
 	    path = this.add.path(96, -32);
 	    path.lineTo(96, 164);
 	    path.lineTo(480, 164);
