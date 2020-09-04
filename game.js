@@ -33,7 +33,7 @@ function create() {
 		}
 	})
 
-
+	gameState.enemies = this.physics.add.group();
 
 	
 	
