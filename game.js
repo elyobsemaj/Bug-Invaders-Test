@@ -12,7 +12,18 @@ function preload() {
 const gameState = {};
 
 function create() {
-    	gameState.enemies = this.physics.add.group();
+    	// add a path
+	    path = this.add.path(96, -32);
+	    path.lineTo(96, 164);
+	    path.lineTo(480, 164);
+	    path.lineTo(480, 544);
+    
+	    graphics.lineStyle(3, 0xffffff, 1);
+	    // visualize the path
+	    path.draw(graphics);
+	
+	// add enemies
+	gameState.enemies = this.physics.add.group();
         for (yVal = 1; yVal < 4; yVal++) {
             for (xVal = 1; xVal < 9; xVal++) {
                 gameState.enemies.create(50 * xVal, 50 * yVal, 'bug1').setScale(0.6).setGravityY(-200);
