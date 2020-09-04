@@ -15,7 +15,7 @@ function create() {
     	gameState.enemies = this.physics.add.group();
         for (yVal = 1; yVal < 4; yVal++) {
             for (xVal = 1; xVal < 9; xVal++) {
-                gameState.enemies.create(50 * xVal, 50 * yVal, 'bug1').setScale(0.6);
+                gameState.enemies.create(50 * xVal, 50 * yVal, 'bug1').setScale(0.6).setGravity(-200);
             }
         }
 }
@@ -25,13 +25,13 @@ function update() {
 
 const config = {
 	type: Phaser.AUTO,
-	width: 450,
-	height: 500,
+	width: 225,
+	height: 250,
 	backgroundColor: "b9eaff",
 	physics: {
 		default: 'arcade',
 		arcade: {
-			gravity: { y: 0 },
+			gravity: { y: 200 },
 			enableBody: true,
 		}
 	},
