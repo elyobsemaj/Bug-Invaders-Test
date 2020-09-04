@@ -8,46 +8,13 @@ function preload() {
   this.load.image('bugRepellent', 'https://s3.amazonaws.com/codecademy-content/courses/learn-phaser/Bug+Invaders/bugRepellent.png');
 }
 
-// Helper Methods below:
-// sortedEnemies() returns an array of enemy sprites sorted by their x coordinate
-function sortedEnemies(){
-  const orderedByXCoord = gameState.enemies.getChildren().sort((a, b) => a.x - b.x);
-  return orderedByXCoord;
-}
-// numOfTotalEnemies() returns the number of total enemies 
-function numOfTotalEnemies() {
-	const totalEnemies = gameState.enemies.getChildren().length;
-  return totalEnemies;
-}
 
 const gameState = {};
 
 function create() {
-	// When gameState.active is true, the game is being played and not over. When gameState.active is false, then it's game over
-	gameState.active = true;
-
-	// When gameState.active is false, the game will listen for a pointerup event and restart when the event happens
-	this.input.on('pointerup', () => {
-		if (gameState.active === false) {
-			this.scene.restart();
-		}
-	})
-
-	gameState.enemies = this.physics.add.group();
-	  for (yVal = 1; yVal < 4; yVal++) {
-    	for (xVal = 1; xVal < 9; xVal++) {
-      gameState.enemies.create(50 * xVal, 50 * yVal, 'bug1').setScale(0.6).setGravityY(-200);
-    		}
-  	}
-
-	
-	
 }
 
 function update() {
-	
-    
-  }
 }
 
 const config = {
