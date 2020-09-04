@@ -33,44 +33,14 @@ function create() {
 		}
 	})
 
-	// Creating static platforms
-	const platforms = this.physics.add.staticGroup();
-	platforms.create(225, 490, 'platform').setScale(1, .3).refreshBody();
 
-	// Displays the initial number of bugs, this value is initially hardcoded as 24 
-	gameState.scoreText = this.add.text(175, 482, 'Bugs Left: 24', { fontSize: '15px', fill: '#000000' });
 
-	// Uses the physics plugin to create Codey
-	gameState.player = this.physics.add.sprite(225, 450, 'codey').setScale(.5);
-
-	// Create Collider objects
-	gameState.player.setCollideWorldBounds(true);
-	this.physics.add.collider(gameState.player, platforms);
 	
-	// Creates cursor objects to be used in update()
-	gameState.cursors = this.input.keyboard.createCursorKeys();
-
-	// Add new code below:
 	
 }
 
 function update() {
-	if (gameState.active) {
-		// If the game is active, then players can control Codey
-		if (gameState.cursors.left.isDown) {
-			gameState.player.setVelocityX(-160);
-		} else if (gameState.cursors.right.isDown) {
-			gameState.player.setVelocityX(160);
-		} else {
-			gameState.player.setVelocityX(0);
-		}
-
-		// Execute code if the spacebar key is pressed
-		if (Phaser.Input.Keyboard.JustDown(gameState.cursors.space)) {
-			
-		}
-
-		// Add logic for winning condition and enemy movements below:
+	
     
   }
 }
@@ -83,7 +53,7 @@ const config = {
 	physics: {
 		default: 'arcade',
 		arcade: {
-			gravity: { y: 200 },
+			gravity: { y: 0 },
 			enableBody: true,
 		}
 	},
