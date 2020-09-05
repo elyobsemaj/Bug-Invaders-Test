@@ -11,10 +11,9 @@ const gameState = {};
 function create() {
     	// add a path
 	    var graphics = this.add.graphics(); 
-	    path = this.add.path(96, -32);
-	    path.lineTo(96, 164);
-	    path.lineTo(480, 164);
-	    path.lineTo(480, 544);
+	    path = this.add.path(40, 550);
+	    path.lineTo(40, 256);
+	    path.lineTo(700, 256);
     
 	    graphics.lineStyle(3, 0xffffff, 1);
 	    // visualize the path
@@ -25,8 +24,8 @@ function create() {
         for (yVal = 1; yVal < 4; yVal++) {
                 gameState.enemies.create(50 , 50 * yVal, 'bug1').setScale(0.6).setGravityY(-200);
         }
-	var enemy1 = this.add.follower(path, 96, -32, 'bug1');
-    	enemy1.startFollow(4000);
+	var enemy1 = this.add.follower(path, 40, 550, 'bug1');
+    	enemy1.startFollow(8000);
 }
 
 function update() {
