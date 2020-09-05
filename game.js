@@ -13,7 +13,7 @@ function create() {
 	    var graphics = this.add.graphics(); 
 	    path = this.add.path(config.width / 16, config.height * 1.1);
 	    path.lineTo(config.width / 16, config.height * .55);
-	    path.lineTo(config.width, config.height * .55);
+	    path.lineTo(config.width * 1.1, config.height * .55);
     
 	    graphics.lineStyle(3, 0xffffff, 1);
 	    // visualize the path
@@ -29,8 +29,8 @@ function update() {
 
 const config = {
 	type: Phaser.AUTO,
-	width: 640,
-	height: 512,
+	width: 365,
+	height: 667,
 	backgroundColor: "b9eaff",
 	physics: {
 		default: 'arcade',
