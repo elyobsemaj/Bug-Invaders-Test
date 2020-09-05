@@ -11,20 +11,16 @@ const gameState = {};
 function create() {
     	// add a path
 	    var graphics = this.add.graphics(); 
-	    path = this.add.path(40, 550);
-	    path.lineTo(40, 256);
-	    path.lineTo(700, 256);
+	    path = this.add.path(config.width / 16, config.height * 1.1);
+	    path.lineTo(config.width / 16, config.height * .55);
+	    path.lineTo(config.width, config.height * .55);
     
 	    graphics.lineStyle(3, 0xffffff, 1);
 	    // visualize the path
 	    path.draw(graphics);
 	
-	// add enemies
-	gameState.enemies = this.physics.add.group();
-        for (yVal = 1; yVal < 4; yVal++) {
-                gameState.enemies.create(50 , 50 * yVal, 'bug1').setScale(0.6).setGravityY(-200);
-        }
-	var enemy1 = this.add.follower(path, 40, 550, 'bug1');
+	    // add enemies
+    	var enemy1 = this.add.follower(path, config.width / 16, config.height * 1.1, 'bug1');
     	enemy1.startFollow(8000);
 }
 
